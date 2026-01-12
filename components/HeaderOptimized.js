@@ -118,10 +118,10 @@ const HeaderOptimized = () => {
                         </Link>
                     </div>
 
-                    {/* Mobile Menu Button */}
+                    {/* Mobile Menu Button - VISIBILITY FIX */}
                     <button
                         onClick={toggleMobileMenu}
-                        className="lg:hidden p-2 text-gray-900 bg-white/80 backdrop-blur-sm rounded-lg shadow-sm hover:bg-white hover:text-primary-600 focus:outline-none transition-all"
+                        className="lg:hidden p-2 text-black bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-50 focus:outline-none transition-all z-50"
                         aria-label="Toggle menu"
                     >
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
