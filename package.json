@@ -10,6 +10,7 @@
     "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
+    "@next/third-parties": "^16.1.1",
     "@tailwindcss/postcss": "^4.1.18",
     "critters": "^0.0.23",
     "next": "^16.1.0",
