@@ -14,7 +14,7 @@ const Footer = () => {
                                 alt="TigmiTec Logo"
                                 fill
                                 className="object-contain object-left"
-                                style={{ filter: 'brightness(0) invert(1)' }}
+                                style={{ filter: 'invert(1) hue-rotate(180deg)' }}
                             />
                         </Link>
                         <p className="text-gray-400 leading-relaxed text-sm">
