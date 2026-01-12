@@ -1,11 +1,44 @@
+'use client';
+import { useState } from 'react';
 import Link from 'next/link';
 
-export const metadata = {
-    title: "TigmiTec | Contactez-Nous - Votre Projet Commence Ici",
-    description: "Besoin d'un site web, d'une application mobile ou d'une stratégie digitale ? Contactez TigmiTec pour un devis gratuit et personnalisé.",
-};
-
 export default function ContactPage() {
+    const [status, setStatus] = useState(null); // null, 'loading', 'success', 'error'
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+        setStatus('loading');
+
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData.entries());
+
+        // ⚠️ IMPORTANT : REMPLACEZ 'VOTRE_ID_FORMSPREE' CI-DESSOUS PAR VOTRE VRAI ID FORMSPREE
+        // Exemple : 'https://formspree.io/f/xeqwzgpb'
+        // Vous pouvez obtenir ce lien gratuitement sur https://formspree.io
+        const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mgooezkp';
+
+        try {
+            const response = await fetch(FORMSPREE_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                setStatus('success');
+                e.target.reset();
+            } else {
+                setStatus('error');
+            }
+        } catch (error) {
+            console.error('Erreur:', error);
+            setStatus('error');
+        }
+    }
+
     return (
         <main className="min-h-screen">
             {/* Header / Page Title */}
@@ -78,53 +111,88 @@ export default function ContactPage() {
                                         Besoin d'un renseignement ou d'un devis ? Remplissez le formulaire ci-dessous, notre équipe vous répondra sous 24h.
                                     </p>
                                 </div>
-                                <form className="space-y-6">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                                {status === 'success' ? (
+                                    <div className="bg-green-50 border border-green-200 text-green-800 rounded-xl p-8 text-center animate-fadeIn">
+                                        <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <h3 className="text-2xl font-bold mb-2">Message Envoyé !</h3>
+                                        <p>Merci de nous avoir contactés. Nous reviendrons vers vous très rapidement.</p>
+                                        <button onClick={() => setStatus(null)} className="mt-6 text-green-700 font-semibold hover:text-green-900 underline">
+                                            Envoyer un autre message
+                                        </button>
+                                    </div>
+                                ) : (
+                                    <form onSubmit={handleSubmit} className="space-y-6">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <div>
+                                                <label className="block text-sm font-medium text-gray-700 mb-2">Nom complet</label>
+                                                <input
+                                                    type="text"
+                                                    name="name"
+                                                    required
+                                                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all"
+                                                    placeholder="Votre nom"
+                                                />
+                                            </div>
+                                            <div>
+                                                <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                                <input
+                                                    type="email"
+                                                    name="email"
+                                                    required
+                                                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all"
+                                                    placeholder="votre@email.com"
+                                                />
+                                            </div>
+                                        </div>
                                         <div>
-                                            <label className="block text-sm font-medium text-gray-700 mb-2">Nom complet</label>
+                                            <label className="block text-sm font-medium text-gray-700 mb-2">Sujet</label>
                                             <input
                                                 type="text"
-                                                name="name"
+                                                name="subject"
                                                 required
                                                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all"
-                                                placeholder="Votre nom"
+                                                placeholder="Sujet de votre message"
                                             />
                                         </div>
                                         <div>
-                                            <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                                            <input
-                                                type="email"
-                                                name="email"
+                                            <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                                            <textarea
+                                                name="message"
                                                 required
-                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all"
-                                                placeholder="votre@email.com"
-                                            />
+                                                rows="6"
+                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all resize-none"
+                                                placeholder="Comment pouvons-nous vous aider ?"
+                                            ></textarea>
                                         </div>
-                                    </div>
-                                    <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">Sujet</label>
-                                        <input
-                                            type="text"
-                                            name="subject"
-                                            required
-                                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all"
-                                            placeholder="Sujet de votre message"
-                                        />
-                                    </div>
-                                    <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                                        <textarea
-                                            name="message"
-                                            required
-                                            rows="6"
-                                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all resize-none"
-                                            placeholder="Comment pouvons-nous vous aider ?"
-                                        ></textarea>
-                                    </div>
-                                    <button type="submit" className="btn btn-primary w-full md:w-auto">
-                                        Envoyer le Message
-                                    </button>
-                                </form>
+
+                                        {status === 'error' && (
+                                            <div className="p-4 bg-red-50 text-red-700 rounded-lg">
+                                                Une erreur est survenue lors de l'envoi. Veuillez vérifier votre connexion ou réessayer plus tard.
+                                            </div>
+                                        )}
+
+                                        <button
+                                            type="submit"
+                                            disabled={status === 'loading'}
+                                            className={`btn btn-primary w-full md:w-auto flex items-center justify-center gap-2 ${status === 'loading' ? 'opacity-70 cursor-not-allowed' : ''}`}
+                                        >
+                                            {status === 'loading' ? (
+                                                <>
+                                                    <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                                    </svg>
+                                                    Envoi en cours...
+                                                </>
+                                            ) : (
+                                                'Envoyer le Message'
+                                            )}
+                                        </button>
+                                    </form>
+                                )}
                             </div>
                         </div>
                     </div>
