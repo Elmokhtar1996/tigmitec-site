@@ -32,8 +32,8 @@ const HeaderOptimized = () => {
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${isScrolled
-                ? 'bg-white/95 backdrop-blur-xl shadow-md border-gray-100 py-2'
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${isScrolled || isMobileMenuOpen
+                ? 'bg-white shadow-md border-gray-100 py-2'
                 : 'bg-white/60 backdrop-blur-md border-transparent py-4'
                 }`}
         >
