@@ -120,10 +120,10 @@ const HeaderOptimized = () => {
                         </Link>
                     </div>
 
-                    {/* Mobile Menu Button - VISIBILITY FIX V5: FIXED TO VIEWPORT */}
+                    {/* Mobile Menu Button - VISIBILITY FIX V6: LEFT SIDE DEBUG */}
                     <button
                         onClick={toggleMobileMenu}
-                        className="lg:hidden fixed top-3 right-4 p-2 text-blue-600 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-50 focus:outline-none z-[99999]"
+                        className="lg:hidden fixed top-3 left-4 p-2 text-blue-600 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-50 focus:outline-none z-[99999]"
                         style={{ opacity: 1, visibility: 'visible' }}
                         aria-label="Toggle menu"
                     >
