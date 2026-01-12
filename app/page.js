@@ -37,7 +37,8 @@ export default function HomeOptimized() {
                             src={slide}
                             alt={`Background Slide ${index + 1}`}
                             fill
-                            className="object-cover object-center"
+                            className={`object-cover object-center transition-transform duration-[10000ms] ease-linear ${currentSlide === index ? 'scale-110' : 'scale-100'
+                                }`}
                             priority={index === 0}
                         />
                         <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-900/80 to-blue-900/90 mix-blend-multiply"></div>
