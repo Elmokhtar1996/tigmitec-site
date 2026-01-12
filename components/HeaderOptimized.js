@@ -106,6 +106,13 @@ const HeaderOptimized = () => {
                         </div>
 
                         <Link
+                            href="/blog"
+                            className="px-4 py-2 text-gray-700 font-medium rounded-full hover:bg-white hover:text-blue-600 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300"
+                        >
+                            Blog
+                        </Link>
+
+                        <Link
                             href="/contact"
                             className="px-4 py-2 text-gray-700 font-medium rounded-full hover:bg-white hover:text-blue-600 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300"
                         >
@@ -231,6 +238,14 @@ const HeaderOptimized = () => {
                                 </Link>
                             </div>
                         </div>
+
+                        <Link
+                            href="/blog"
+                            onClick={closeMobileMenu}
+                            className="px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-lg transition-colors"
+                        >
+                            Blog
+                        </Link>
 
                         <Link
                             href="/contact"
