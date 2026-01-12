@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="antialiased bg-white text-gray-900">
+      <body className="antialiased bg-white text-gray-900 overflow-x-hidden">
         <HeaderOptimized />
         <main className="pt-20">
           {children}
