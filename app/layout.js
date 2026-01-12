@@ -1,5 +1,6 @@
 import HeaderOptimized from "@/components/HeaderOptimized";
 import Footer from "@/components/Footer";
+import { GoogleAnalytics } from '@next/third-parties/google';
 import "./globals.css";
 
 export const metadata = {
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <Footer />
+        <GoogleAnalytics gaId="G-XXXXXXXXXX" />
       </body>
     </html>
   );
