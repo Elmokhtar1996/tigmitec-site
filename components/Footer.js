@@ -8,15 +8,19 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                     {/* Brand Column */}
                     <div className="space-y-6">
-                        <Link href="/" className="block relative w-48 h-12">
-                            <Image
-                                src="/images/logo/logo.png"
-                                alt="TigmiTec Logo"
-                                fill
-                                className="object-contain object-left"
-                                style={{ filter: 'invert(1) hue-rotate(180deg)' }}
-                            />
-                        </Link>
+                        <div className="flex items-center gap-3">
+                            {/* Logo Icon (Cropped from original) */}
+                            <div className="relative w-10 h-10 overflow-hidden shrink-0">
+                                <Image
+                                    src="/images/logo/logo.png"
+                                    alt="TigmiTec Logo Icon"
+                                    fill
+                                    className="object-contain object-left scale-150 origin-left"
+                                />
+                            </div>
+                            {/* Reconstructed Text */}
+                            <span className="text-2xl font-bold text-white font-heading tracking-tight">TigmiTec</span>
+                        </div>
                         <p className="text-gray-400 leading-relaxed text-sm">
                             Votre partenaire digital de confiance. Nous transformons vos idées en solutions
                             numériques innovantes et performantes pour propulser votre entreprise vers l'avenir.
