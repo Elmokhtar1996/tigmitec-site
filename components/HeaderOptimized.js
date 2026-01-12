@@ -32,11 +32,11 @@ const HeaderOptimized = () => {
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-300 border-b 
+            className={`fixed top-0 left-0 right-0 z-[9999] border-b 
             bg-white shadow-sm border-gray-100 py-2 
             ${isScrolled
-                    ? 'lg:bg-white lg:shadow-md lg:py-2'
-                    : 'lg:bg-white/60 lg:backdrop-blur-md lg:border-transparent lg:py-4'
+                    ? 'lg:bg-white lg:shadow-md lg:py-2 lg:transition-all lg:duration-300'
+                    : 'lg:bg-white/60 lg:backdrop-blur-md lg:border-transparent lg:py-4 lg:transition-all lg:duration-300'
                 }`}
         >
             <div className="container-custom">
