@@ -33,11 +33,12 @@ const HeaderOptimized = () => {
     return (
         <header
             className={`fixed top-0 left-0 right-0 z-[9999] border-b 
-            bg-white shadow-sm border-gray-100 py-2 
+            bg-white shadow-sm border-gray-100 py-2 border-b-4 border-red-500
             ${isScrolled
                     ? 'lg:bg-white lg:shadow-md lg:py-2 lg:transition-all lg:duration-300'
                     : 'lg:bg-white/60 lg:backdrop-blur-md lg:border-transparent lg:py-4 lg:transition-all lg:duration-300'
                 }`}
+            style={{ top: 0, position: 'fixed', width: '100%', zIndex: 99999, display: 'block', opacity: 1 }}
         >
             <div className="container-custom">
                 <div className="flex items-center justify-between">
