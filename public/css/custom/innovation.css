@@ -1,0 +1,565 @@
+/* Minimalist & Clean Innovation Design for TigmiTec */
+
+/* 1. Global Typography & Colors */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #4a5568;
+    background-color: #ffffff;
+    line-height: 1.8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Inter', sans-serif;
+    color: #1a202c;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* 2. Navbar - Clean White */
+.main-header .header-upper {
+    background: #ffffff;
+    box-shadow: none;
+    border-bottom: 1px solid #edf2f7;
+    padding: 15px 0;
+}
+
+.main-menu .navigation>li>a {
+    color: #2d3748;
+    font-weight: 600;
+    text-transform: none;
+    /* Sentance case is friendlier */
+    font-size: 15px;
+}
+
+.main-menu .navigation>li.current>a,
+.main-menu .navigation>li:hover>a {
+    color: #0074D9;
+    background: transparent;
+}
+
+/* 3. Hero Section - Bold Typography, Clean Background */
+/* 3. Hero Section - Bold Typography & Moving Backgrounds */
+.main-slider .slide .content {
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes kenBurns {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.15);
+    }
+
+    /* Smooth zoom */
+}
+
+.main-slider .slide {
+    animation: kenBurns 20s linear infinite alternate;
+    /* The moving effect */
+    background-size: cover !important;
+    background-position: center center !important;
+    position: relative;
+    overflow: hidden;
+    /* Ensure zoom doesn't spill over */
+}
+
+/* Optional: Dark overlay to make text pop on moving image */
+.main-slider .slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    /* Light overlay for minimalist theme */
+    z-index: 1;
+}
+
+.main-slider .slide h1 {
+    font-size: 60px;
+    color: #1a202c;
+    background: rgba(255, 255, 255, 0.9);
+    display: inline-block;
+    padding: 20px 30px;
+    backdrop-filter: blur(5px);
+    border-radius: 4px;
+    border-radius: 4px;
+    color: #000;
+    line-height: 1.3;
+    margin-bottom: 25px;
+    /* Add breathing room below title */
+}
+
+.main-slider .slide .content .text {
+    background: #fff;
+    display: inline-block;
+    padding: 15px 30px;
+    /* More padding */
+    color: #4a5568 !important;
+    position: relative;
+    z-index: 2;
+    font-size: 18px;
+    /* Slightly larger */
+    line-height: 1.8;
+    /* Improve readability */
+    max-width: 90%;
+    /* prevent full width stretch */
+    border-radius: 4px;
+}
+
+/* 4. Services - Clean Cards with Shadow on Hover */
+.single-item.hoverly-one {
+    background: #ffffff;
+    border: 1px solid #edf2f7;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    padding: 40px 30px;
+}
+
+.single-item.hoverly-one:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: #0074D9;
+}
+
+.single-item.hoverly-one .icon-box {
+    background: #E5F1FB;
+    color: #0074D9;
+    border-radius: 12px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    margin-bottom: 25px;
+}
+
+.single-item.hoverly-one .icon-box i:before {
+    color: #0074D9;
+    font-size: 24px;
+}
+
+.single-item.hoverly-one h4 a {
+    color: #2d3748;
+    font-size: 20px;
+}
+
+/* 5. Section Titles - Minimalist Center */
+.section-title h2 {
+    font-size: 32px;
+    color: #1a202c;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.section-title h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background: #0074D9;
+    border-radius: 2px;
+}
+
+/* 6. Buttons - Solid & Clean */
+.btn-one {
+    background: #0074D9 !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 6px;
+    padding: 14px 32px;
+    font-weight: 600;
+    font-size: 15px;
+    box-shadow: 0 4px 6px -1px rgba(0, 116, 217, 0.3);
+}
+
+.btn-one:hover {
+    background: #005DAE !important;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 15px -3px rgba(0, 116, 217, 0.4);
+}
+
+/* 7. Footer - Elegant Black Theme */
+.main-footer {
+    background: #1a202c;
+    border-top: none;
+    color: #e2e8f0;
+    padding: 80px 0 40px;
+    position: relative;
+}
+
+.main-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, #1a202c 0%, #0f1419 100%);
+    z-index: 0;
+}
+
+.main-footer>.container {
+    position: relative;
+    z-index: 1;
+}
+
+.footer-bottom {
+    background: #0f1419;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 25px 0;
+}
+
+.main-footer .footer-title h4 {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.main-footer .footer-title h4:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: #0074D9;
+    border-radius: 2px;
+}
+
+/* Footer Widgets */
+.footer-widget {
+    margin-bottom: 40px;
+}
+
+.footer-widget .text p {
+    color: #cbd5e0 !important;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Footer Logo */
+.footer-logo {
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    max-width: 180px;
+    height: auto;
+    filter: brightness(1.2);
+}
+
+/* Footer Social Icons */
+.footer-social {
+    margin-top: 20px;
+}
+
+.footer-social a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-social a:hover {
+    background: #0074D9;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 116, 217, 0.4);
+    border-color: #0074D9;
+}
+
+.footer-social a i {
+    font-size: 16px;
+}
+
+/* Footer Links */
+.footer-widget.links-widget ul.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-widget.links-widget ul.list li {
+    margin-bottom: 12px;
+}
+
+.footer-widget.links-widget ul.list li a {
+    color: #cbd5e0;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    padding-left: 15px;
+}
+
+.footer-widget.links-widget ul.list li a:before {
+    content: '\f105';
+    font-family: 'FontAwesome';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #0074D9;
+    transition: all 0.3s ease;
+}
+
+.footer-widget.links-widget ul.list li a:hover {
+    color: #ffffff;
+    padding-left: 20px;
+}
+
+/* Footer Contact Info */
+.footer-widget.contact-widget ul.info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-widget.contact-widget ul.info li {
+    color: #cbd5e0;
+    font-size: 14px;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 30px;
+    line-height: 1.8;
+}
+
+.footer-widget.contact-widget ul.info li i {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #0074D9;
+    font-size: 16px;
+}
+
+.footer-widget.contact-widget ul.info li a {
+    color: #cbd5e0;
+    transition: all 0.3s ease;
+}
+
+.footer-widget.contact-widget ul.info li a:hover {
+    color: #ffffff;
+}
+
+/* Footer Bottom */
+.footer-bottom .copyright {
+    color: #cbd5e0;
+    font-size: 14px;
+    line-height: 50px;
+}
+
+.footer-bottom .copyright a {
+    color: #0074D9;
+    font-weight: 600;
+}
+
+.footer-bottom .copyright a:hover {
+    color: #60a5fa;
+}
+
+.footer-bottom .footer-nav {
+    text-align: right;
+}
+
+.footer-bottom .footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 50px;
+}
+
+.footer-bottom .footer-nav ul li {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+.footer-bottom .footer-nav ul li a {
+    color: #cbd5e0;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.footer-bottom .footer-nav ul li a:hover {
+    color: #ffffff;
+}
+
+/* Responsive Footer */
+@media (max-width: 767px) {
+
+    .footer-bottom .copyright,
+    .footer-bottom .footer-nav {
+        text-align: center;
+        line-height: 30px;
+    }
+
+    .footer-bottom .footer-nav ul li {
+        margin: 0 10px;
+    }
+
+    .main-footer {
+        padding: 50px 0 20px;
+    }
+}
+
+/* Reset Backgrounds */
+.sec-pad,
+.about-us,
+.our-service,
+.our-idea,
+.latest-project,
+.testimonials-section,
+.news-section {
+    background-color: #ffffff !important;
+}
+
+.our-service {
+    background-color: #f8fafc !important;
+    /* Slight off-white for contrast */
+}
+
+/* Text adjustments */
+p {
+    color: #4a5568 !important;
+}
+
+.about-content h3 {
+    color: #2d3748 !important;
+}
+
+.about-content h3 span {
+    color: #0074D9 !important;
+}
+
+/* Image styling */
+img {
+    border-radius: 8px;
+}
+
+.footer-logo img {
+    max-width: 150px;
+    /* Constrain logo width in footer */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* 8. Commitments Section - Split Layout */
+.commitments-section {
+    background: #ffffff !important;
+}
+
+.commitments-section .list-item {
+    margin-top: 30px;
+    padding: 0;
+    list-style: none;
+}
+
+.commitments-section .list-item li {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 30px;
+}
+
+.commitments-section .list-item li .icon-box {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    background: #E5F1FB;
+    color: #0074D9;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 18px;
+}
+
+.commitments-section .list-item li h5 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #2d3748;
+}
+
+.commitments-section .list-item li p {
+    font-size: 15px;
+    color: #718096 !important;
+    line-height: 1.6;
+}
+
+.commitments-section .image-box img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 20px 20px 60px #d1d9e6, -20px -20px 60px #ffffff;
+}
+
+.commitments-section .btn-box {
+    margin-top: 40px;
+}
+
+/* Contact Page Styling */
+.contact-section .form,
+.google-map-area {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 1px solid #edf2f7;
+    height: 100%;
+    /* Try to match heights if possible */
+}
+
+/* Ensure map matches the container */
+.google-map-area iframe {
+    border-radius: 8px;
+    width: 100% !important;
+    height: 450px !important;
+    /* Fixed height for consistency */
+}
+
+/* Adjust form inputs to look good inside the card */
+.contact-section .form form .form-group input,
+.contact-section .form form .form-group textarea {
+    border-radius: 6px;
+}
+
+/* Fix footer logo: Invert colors (Black->White, Blue->Yellow) then Rotate Hue (Yellow->Blue) */
+.main-footer .footer-logo img {
+    filter: invert(1) hue-rotate(180deg);
+    opacity: 0.95;
+}
+
+/* Constraint service detail images to be identical */
+.sidebar-details .img-box figure img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+}

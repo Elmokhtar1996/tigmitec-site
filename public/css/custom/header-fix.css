@@ -1,0 +1,29 @@
+/* Enlever l'espace en haut du header */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body.body_wrapper {
+    padding-top: 0 !important;
+}
+
+.main-header {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    top: 0 !important;
+}
+
+.header-upper {
+    margin-top: 0 !important;
+    padding-top: 10px !important;
+}
+
+.preloader {
+    margin: 0 !important;
+}

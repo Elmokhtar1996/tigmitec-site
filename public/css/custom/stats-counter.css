@@ -1,0 +1,95 @@
+/* Statistics Counter Section & Skills Growth */
+.skills-growth {
+    background: #ffffff !important;
+    /* Force white background replacing any grey/dark */
+    padding: 80px 0;
+}
+
+.stats-column {
+    padding-left: 30px;
+}
+
+.stats-title {
+    margin-bottom: 40px;
+}
+
+.stats-outer {
+    position: relative;
+}
+
+.counter-block {
+    text-align: center;
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    background: #ffffff;
+    /* Ensure white background for the card/block */
+    border: 1px solid #e5e5e5;
+    /* Simple border instead of shadow/gradients */
+    border-radius: 8px;
+    /* Standard border radius */
+    transition: all 0.3s ease;
+}
+
+.counter-block:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    /* Very subtle hover shadow */
+    border-color: #0074D9;
+}
+
+.counter-block .icon-box {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    margin: 0 auto 20px;
+    background: #E5F1FB;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.counter-block:hover .icon-box {
+    background: #0074D9;
+    color: #fff;
+}
+
+.counter-block .icon-box i {
+    font-size: 32px;
+    color: #0074D9;
+    transition: all 0.3s ease;
+}
+
+.counter-block:hover .icon-box i {
+    color: #ffffff;
+}
+
+.counter-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1a202c;
+    line-height: 1;
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+}
+
+.counter-number span {
+    color: #0074D9;
+}
+
+.counter-title {
+    font-size: 16px;
+    color: #4a5568;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .stats-column {
+        padding-left: 15px;
+        margin-top: 50px;
+    }
+
+    .counter-block {
+        margin-bottom: 20px;
+    }
+}

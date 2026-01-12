@@ -1,0 +1,73 @@
+/* Innovation & Expertise Section Styling */
+.innovation-expertise-content {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.innovation-image-box {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    box-shadow: 0 15px 35px rgba(0, 116, 217, 0.2);
+}
+
+.innovation-image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.innovation-image-box:hover img {
+    transform: scale(1.05);
+}
+
+.expertise-list {
+    margin-top: 20px;
+}
+
+.expertise-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.expertise-item:hover {
+    background: #f8fafc;
+}
+
+.expertise-item i {
+    width: 40px;
+    height: 40px;
+    background: #0074D9;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.expertise-item .text {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* Glassmorphism Effect for the card if needed */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
