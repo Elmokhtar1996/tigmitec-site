@@ -1,94 +1,92 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata = {
-    title: "TigmiTec | Notre Équipe d'Experts",
-    description: "Découvrez l'équipe passionnée de TigmiTec. Des experts en développement web, design et marketing digital à votre service.",
+    title: "TigmiTec | Nos Expertises & Métiers",
+    description: "Découvrez les experts passionnés qui propulsent TigmiTec : Développement, Design, Marketing et Innovation.",
 };
 
 export default function TeamPage() {
-    const teamMembers = [
+    const expertises = [
         {
-            name: "Hassan",
-            role: "Directeur Général & Lead Developer",
-            img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=370&h=430&q=80",
-            socials: { facebook: "#", twitter: "#", linkedin: "#" }
+            role: "Ingénierie Fullstack",
+            description: "Architectes de solutions robustes, nos développeurs maîtrisent l'art du code propre et performant, du backend complexe au frontend réactif.",
+            icon: "💻",
+            gradient: "from-blue-600 to-cyan-500"
         },
         {
-            name: "Sofia",
-            role: "Directrice Artistique & UX Designer",
-            img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=370&h=430&q=80",
-            socials: { facebook: "#", twitter: "#", linkedin: "#" }
+            role: "Design UX/UI",
+            description: "Nos designers ne font pas que du beau. Ils conçoivent des expériences utilisateurs fluides, intuitives et centrées sur l'humain.",
+            icon: "🎨",
+            gradient: "from-purple-600 to-pink-500"
         },
         {
-            name: "Karim",
-            role: "Expert Marketing Digital & SEO",
-            img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=370&h=430&q=80",
-            socials: { facebook: "#", twitter: "#", linkedin: "#" }
+            role: "Stratégie Digitale",
+            description: "Au-delà de la technique, nos stratèges analysent votre marché pour positionner votre produit là où il aura le plus d'impact.",
+            icon: "🚀",
+            gradient: "from-orange-500 to-red-500"
         },
         {
-            name: "Yasmine",
-            role: "Développeuse Web Full-Stack",
-            img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=370&h=430&q=80",
-            socials: { facebook: "#", twitter: "#", linkedin: "#" }
+            role: "Intelligence Artificielle",
+            description: "Pionniers de l'innovation, nos experts IA intègrent des modèles prédictifs et des automatisations intelligentes à vos processus.",
+            icon: "🧠",
+            gradient: "from-indigo-600 to-blue-500"
         },
         {
-            name: "Amine",
-            role: "Social Media Manager",
-            img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=370&h=430&q=80",
-            socials: { facebook: "#", twitter: "#", linkedin: "#" }
+            role: "Gestion de Projet Agile",
+            description: "Les chefs d'orchestre de vos succès. Ils assurent que chaque sprint délivre de la valeur, dans les temps et le budget impartis.",
+            icon: "⚡",
+            gradient: "from-green-500 to-emerald-400"
         },
         {
-            name: "Lila",
-            role: "Chargée de Relation Client",
-            img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=370&h=430&q=80",
-            socials: { facebook: "#", twitter: "#", linkedin: "#" }
+            role: "Cybersécurité & DevOps",
+            description: "Gardiens de votre infrastructure, ils déploient des environnements sécurisés et scalables pour une tranquillité d'esprit totale.",
+            icon: "🛡️",
+            gradient: "from-gray-700 to-gray-900"
         }
     ];
 
     return (
-        <main className="min-h-screen">
+        <main className="min-h-screen bg-gray-50">
             {/* Header / Page Title - Modernized */}
             <section className="relative py-20 bg-gray-900 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-900 to-secondary-900 opacity-90"></div>
                 <div className="absolute inset-0 bg-grid-white/[0.05] bg-[length:20px_20px]"></div>
                 <div className="container-custom relative z-10 text-center">
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-4">
-                        Notre <span className="gradient-text">Équipe</span>
+                        Nos <span className="gradient-text">Talents</span>
                     </h1>
                     <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                        Des talents passionnés pour vos projets ambitieux
+                        Une équipe pluridisciplinaire unie par la passion de l'excellence
                     </p>
                 </div>
             </section>
 
-            {/* Team Grid */}
-            <section className="section bg-white">
+            {/* Expertise Grid - No Photos, Just Style */}
+            <section className="section">
                 <div className="container-custom">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                        {teamMembers.map((member, index) => (
-                            <div key={index} className="group relative">
-                                <div className="absolute -inset-1 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-3xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-                                <div className="relative bg-white rounded-2xl p-6 ring-1 ring-gray-900/5 shadow-xl text-center">
-                                    <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300">
-                                        <img
-                                            src={member.img}
-                                            alt={member.name}
-                                            className="w-full h-full object-cover"
-                                        />
-                                    </div>
-                                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                                    <p className="text-primary-600 font-medium mb-4">{member.role}</p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {expertises.map((item, index) => (
+                            <div key={index} className="group relative h-full">
+                                {/* Background Glow Effect on Hover */}
+                                <div className={`absolute -inset-0.5 bg-gradient-to-r ${item.gradient} rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500`}></div>
 
-                                    <div className="flex justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                        {Object.entries(member.socials).map(([platform, link], i) => (
-                                            <a key={i} href={link} className="text-gray-400 hover:text-primary-500 transition-colors">
-                                                <span className="sr-only">{platform}</span>
-                                                <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
-                                                    <i className={`fa fa-${platform}`}></i>
-                                                </div>
-                                            </a>
-                                        ))}
+                                <div className="relative bg-white h-full p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center text-center transition-transform duration-300 group-hover:-translate-y-1">
+                                    {/* Icon Circle */}
+                                    <div className={`w-20 h-20 rounded-full bg-gradient-to-br ${item.gradient} flex items-center justify-center text-4xl mb-6 shadow-md transform group-hover:scale-110 group-hover:rotate-12 transition-transform duration-500`}>
+                                        {item.icon}
                                     </div>
+
+                                    <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-gray-900 group-hover:to-blue-600 transition-all">
+                                        {item.role}
+                                    </h3>
+
+                                    <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                                        {item.description}
+                                    </p>
+
+                                    {/* Decorative Line */}
+                                    <div className={`mt-auto pt-6 w-12 border-b-4 border-gray-100 group-hover:border-transparent group-hover:bg-gradient-to-r ${item.gradient} h-1 transition-all duration-500`}></div>
                                 </div>
                             </div>
                         ))}
@@ -96,49 +94,42 @@ export default function TeamPage() {
                 </div>
             </section>
 
-            {/* Future Talent & Innovation Section */}
-            <section className="section section-light relative overflow-hidden">
+            {/* Philosophy Section */}
+            <section className="section bg-white border-t border-gray-100 relative overflow-hidden">
                 <div className="container-custom">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                        <div className="space-y-6 relative z-10">
-                            <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900">
-                                L'Expertise Toujours à Portée de Main
-                            </h2>
-                            <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
-                                <p>
-                                    Chez TigmiTec, notre force réside dans une synergie unique entre créativité artistique et excellence technique.
-                                    Chaque membre de notre équipe apporte une expertise pointue, qu'il s'agisse de développement complexe, de design intuitif ou de stratégies digitales percutantes.
-                                </p>
-                                <p>
-                                    Nous ne nous contentons pas de livrer des projets ; nous construisons des partenariats durables basés sur la confiance et l'innovation.
-                                    Notre engagement est d'anticiper vos besoins futurs tout en résolvant vos défis actuels avec agilité et précision.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
-                            <img
-                                src="/images/resources/future-backpack.jpg"
-                                alt="TigmiTec Mobility"
-                                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
+                    <div className="max-w-4xl mx-auto text-center">
+                        <h2 className="text-3xl font-heading font-bold text-gray-900 mb-6">
+                            Plus qu'un métier, un état d'esprit
+                        </h2>
+                        <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                            Chez TigmiTec, nous croyons que la compétence technique ne suffit pas.
+                            C'est la curiosité, l'empathie et la soif d'apprendre qui font la différence.
+                            Chacun de nos experts est sélectionné non seulement pour son savoir-faire,
+                            mais aussi pour sa capacité à collaborer et à innover.
+                        </p>
+                        <div className="inline-flex items-center justify-center space-x-2 text-blue-600 font-bold uppercase tracking-wider text-sm bg-blue-50 px-4 py-2 rounded-full">
+                            <span>Excellence</span>
+                            <span className="text-gray-300">•</span>
+                            <span>Passion</span>
+                            <span className="text-gray-300">•</span>
+                            <span>Innovation</span>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Join Us CTA */}
-            <section className="section bg-primary-900 text-white text-center">
-                <div className="container-custom">
-                    <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-                        Rejoignez l'Aventure TigmiTec
+            <section className="py-20 bg-gray-900 text-white text-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/40 via-gray-900 to-gray-900"></div>
+                <div className="container-custom relative z-10">
+                    <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
+                        Vous vous reconnaissez dans ces valeurs ?
                     </h2>
-                    <p className="text-xl text-primary-200 mb-8 max-w-2xl mx-auto">
-                        Nous sommes toujours à la recherche de nouveaux talents passionnés par le code, le design et l'innovation.
+                    <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+                        Nous sommes toujours à la recherche de nouveaux talents pour enrichir notre équipe.
                     </p>
-                    <Link href="/contact" className="btn bg-white text-primary-900 hover:bg-gray-100">
-                        Voir les Opportunités
+                    <Link href="/contact" className="inline-block px-8 py-4 bg-white text-gray-900 font-bold rounded-full hover:bg-blue-600 hover:text-white transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+                        Rejoignez l'Aventure
                     </Link>
                 </div>
             </section>
