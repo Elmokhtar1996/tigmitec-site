@@ -140,7 +140,7 @@ export default function HomeOptimized() {
             </section>
 
             {/* Services Section - Blue/Black/White Theme */}
-            <section className="section bg-gray-50 py-24 border-t border-gray-100 relative">
+            <section className="section bg-gray-50 py-24 border-t border-gray-100 relative overflow-hidden">
                 <div className="absolute inset-0 bg-[url('/images/pattern-grid.svg')] opacity-5 pointer-events-none"></div>
                 <div className="container-custom relative z-10">
                     <Reveal>
@@ -211,7 +211,7 @@ export default function HomeOptimized() {
             </section>
 
             {/* Skills & Stats Section - White Theme */}
-            <section className="section bg-white text-gray-900 border-t border-gray-100 py-24">
+            <section className="section bg-white text-gray-900 border-t border-gray-100 py-24 overflow-hidden">
                 <div className="container-custom">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                         {/* Compétences */}
@@ -313,7 +313,7 @@ export default function HomeOptimized() {
             </section>
 
             {/* News Section */}
-            <section className="section bg-gray-50 text-gray-900 border-t border-gray-100">
+            <section className="section bg-gray-50 text-gray-900 border-t border-gray-100 overflow-hidden">
                 <div className="container-custom">
                     <Reveal>
                         <div className="text-center mb-16">
